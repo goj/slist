@@ -52,3 +52,8 @@ def test_len():
     assert_equal(len(nil), 0)
     assert_equal(len(slist([1])), 1)
     assert_equal(len(slist([1, 2, 3])), 3)
+
+def test_free_stuff():
+    assert_equal(sum(slist([1, 2, 3])), 6)
+    assert_equal(set(slist([1, 2, 1])), {1, 2})
+    assert_equal(dict(slist([(1, 2), (3, 4)])), {1: 2, 3: 4})
