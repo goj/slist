@@ -45,6 +45,13 @@ def equality_test():
     assert_not_equal(slist([1, 2]), slist([1]))
     assert_not_equal(slist([1]), slist([1, 2]))
 
+def hash_test():
+    assert_equal(hash(slist()), hash(slist()))
+    assert_equal(hash(slist([1])), hash(slist([1])))
+    assert_equal(hash(slist([1, 2, 3])), hash(slist([1, 2, 3])))
+    assert_not_equal(hash(slist()), hash(slist([1])))
+    assert_not_equal(hash(slist([1, 2, 3])), hash(slist([1])))
+
 def test_reversed():
     assert_equal(reversed(slist([1, 2, 3])), slist([3, 2, 1]))
 

@@ -32,6 +32,12 @@ class ConsCell:
         # FIXME: no TCO in Python
         return self.tl == other.tl
 
+    def __hash__(self):
+        result = id(nil)
+        for elem in self:
+            result ^= hash(elem)
+        return result
+
     def __repr__(self):
         return 'slist(%r)' % list(self)
 
